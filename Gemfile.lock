@@ -19,6 +19,7 @@ GEM
       concurrent-ruby (~> 1.0)
     minitest (5.12.2)
     multi_json (1.14.1)
+    pg (0.18.1-x64-mingw32)
     rack (1.5.2)
     rack-protection (1.5.1)
       rack
@@ -65,9 +66,10 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  pg
   rake
   sinatra
-  sinatra-activerecord
+  sinatra-activerecord (~> 2.0)
   sinatra-contrib
   sqlite3
   tux
