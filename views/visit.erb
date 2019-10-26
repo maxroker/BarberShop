@@ -1,0 +1,93 @@
+<!-- DateTimePICKER STYLE -->
+    <link rel="stylesheet" type="text/css" href="./jquery.datetimepicker.css"/>
+    <style type="text/css">
+    .custom-date-style {background-color: red !important;}
+    .input{ }
+    .input-wide{width: 500px;}
+    </style>
+
+
+<!-- ColorPicker Links -->
+  <link rel="stylesheet" href="/jquery.simplecolorpicker.css">
+  <link rel="stylesheet" href="/jquery.simplecolorpicker-regularfont.css">
+  <link rel="stylesheet" href="/jquery.simplecolorpicker-glyphicons.css">
+  <link rel="stylesheet" href="/jquery.simplecolorpicker-fontawesome.css">
+
+
+
+<h2>Записаться</h2>
+<p>На этой странице вы сможете записаться к нам в Barber Shop</p>
+
+
+<form action="/visit" method="POST" role="form">
+
+  <div class="form-group">
+    <label>Ваше имя</label>
+    <input name="client[name]" type="text" class="form-control" placeholder="Ваше имя" value="<%= @c.name %>">
+  </div>
+
+  <div class="form-group">
+    <label>Ваш телефон</label>
+    <input name="client[phone]" type="text" class="form-control" placeholder="Ваш телефон" value="<%= @c.phone %>">
+  </div>
+
+  <div class="form-group">
+    <label>Когда вас ждать?</label>
+    <input id="datetimepicker" name="client[datestamp]" type="text" class="form-control" placeholder="Введите дату и время" value="<%= @c.datestamp %>">
+  </div>
+
+
+  <div class="form-group">
+    <label>В какие цвета хотите себя окрасить: </label>
+    <select id="color" name="clien t[color]">
+      <option value="#7bd148">Green</option>
+      <option value="#5484ed">Bold blue</option>
+      <option value="#a4bdfc">Blue</option>
+      <option value="#46d6db">Turquoise</option>
+      <option value="#7ae7bf">Light green</option>
+      <option value="#51b749">Bold green</option>
+      <option value="#fbd75b">Yellow</option>
+      <option value="#ffb878">Orange</option>
+      <option value="#ff887c">Red</option>
+      <option value="#dc2127">Bold red</option>
+      <option value="#dbadff">Purple</option>
+      <option value="#e1e1e1">Gray</option>
+    </select>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Записаться</button>
+
+</form>
+
+<!-- DateTimePICKER SCRIPTS -->
+  <script src="/jquery.js"></script>
+  <script src="/node_modules/php-date-formatter/js/php-date-formatter.min.js"></script>
+  <script src="/node_modules/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="/jquery.datetimepicker.js"></script>
+
+  <script>
+
+  $.datetimepicker.setLocale('en');
+
+  $('#datetimepicker').datetimepicker({ 
+    minTime:'08:00', 
+    maxTime:'20:00', 
+    disabledWeekDays: [0, 6], 
+    step:30 
+  });
+
+  $('#datetimepicker_mask').datetimepicker({
+    mask:'9999/19/39 29:59'
+  });
+
+  </script>
+
+<!-- ColorPicker Scripts -->
+  <script src="/jquery.simplecolorpicker.js"></script>
+
+  <script>
+  $(document).ready(function() {
+      $('#color').simplecolorpicker();   
+  });
+  </script>
