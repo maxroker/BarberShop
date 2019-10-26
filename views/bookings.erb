@@ -1,6 +1,24 @@
 <h2>Список записавшихся</h2>
+
+
 <% @clients.each do |client| %>
-	<p>
-		<a href="/client/<%= client.id %>"><%= client.name %></a>
-	</p>
+<div class="container">
+	<div class="row" >
+		<div class="col-sm-2">
+			<a href="/client/<%= client.id %>"><%= client.name %></a>
+		</div>
+		<div class="col-sm-2">
+			<%= client.phone %>
+		</div>
+		<div class="col-sm-2">
+			<%= client.barber %>
+		</div>
+		<div class="col-sm-2">
+			<%= client.datestamp %>
+		</div>
+		<div class="col-sm-4">
+			<%= client.color %>
+		</div>
+	<div>
+<div>
 <% end %>

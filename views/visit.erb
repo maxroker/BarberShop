@@ -33,9 +33,9 @@
 
   <div class="form-group">
     <label>Ваш парикмахер</label><br />
-     <select class="form-control custom-select mr-sm-2" name="client[barber]" type="text" value="<%= @c.barber %>">
+     <select class="form-control custom-select mr-sm-2" name="client[barber]" type="text" >
         <% @barbers.each do |barber| %>
-        <option ><%= barber.name %></option>
+        <option value="<%= @c.barber %>"><%= barber.name %></option>
         <% end %>
       </select>
   </div>
